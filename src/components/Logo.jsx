@@ -1,0 +1,1 @@
+export default function Logo(){return <div className="logo"><span>◒</span><b>SMART <i>ECO</i></b></div>}

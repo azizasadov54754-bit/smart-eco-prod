@@ -1,0 +1,2 @@
+import {CheckCircle2,XCircle,Info} from "lucide-react";import {useEffect} from "react";
+export default function Toast({item,close}){useEffect(()=>{if(!item)return;const x=setTimeout(close,2600);return()=>clearTimeout(x)},[item,close]);if(!item)return null;const I=item.type==="error"?XCircle:item.type==="info"?Info:CheckCircle2;return <div className={`toast ${item.type||""}`}><I size={18}/>{item.message}</div>}

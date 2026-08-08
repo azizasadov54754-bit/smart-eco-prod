@@ -1,0 +1,7 @@
+{
+  "name":"Smart Eco","short_name":"Smart Eco",
+  "description":"Smart Campus ekologik platformasi",
+  "start_url":"/","display":"standalone",
+  "background_color":"#071510","theme_color":"#071510",
+  "icons":[{"src":"/icons/icon.svg","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}]
+}

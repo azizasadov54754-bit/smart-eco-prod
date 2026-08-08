@@ -1,0 +1,2 @@
+import {Home,Map,ScanLine,Gift,UserRound} from "lucide-react";
+export default function MobileNav({active,go,labels}){const a=[["home",Home,labels.home],["map",Map,labels.map],["scan",ScanLine,labels.scan],["rewards",Gift,labels.rewards],["profile",UserRound,labels.profile]];return <nav className="mobile-nav">{a.map(([id,I,l])=><button className={active===id?"active":""} key={id} onClick={()=>go(id)}><I/><small>{l}</small></button>)}</nav>}

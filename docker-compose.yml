@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: smarteco
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports: ['5432:5432']
+    volumes: [postgres_data:/var/lib/postgresql/data]
+  redis:
+    image: redis:8-alpine
+    ports: ['6379:6379']
+  api:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/smarteco
+      REDIS_URL: redis://redis:6379/0
+      JWT_SECRET: local-smart-eco-change-this-very-long-secret
+      CORS_ORIGINS: http://localhost:5173
+    ports: ['8000:8000']
+    depends_on: [postgres, redis]
+volumes:
+  postgres_data:
